@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Stranger Things Site Officiel</title>
+    <link rel="icon" href="https://www.defillesenfil.fr/277540-medium_default/thermocollant-stranger-things-guirlande.jpg" type="image/png">
+    <link rel="stylesheet" href="site stranger thing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <canvas id="st-bg-canvas"></canvas>
+
+    <!-- Guirlande -->
+<div id="st-lights" style="position: fixed; top: 60px; left: 0; width: 100vw; height: 80px; z-index: 5; pointer-events: auto;">        <svg width="100vw" height="80" style="position:absolute;top:0;left:0;width:100vw;height:80px;z-index:0;">
+            <path d="M 40 60 Q 300 10 600 60 Q 900 110 1200 40 Q 1500 10 1900 60" stroke="#444" stroke-width="4" fill="none"/>
+        </svg>
+        <div style="position:relative;z-index:1;width:100vw;height:80px;">
+<div class="st-bulb r" style="position:absolute;left:4vw;top:55px;" data-bulb-text="La série a failli ne jamais exister : Les frères Duffer ont proposé Stranger Things 15 à 20 fois avant que Netflix accepte."></div>
+<div class="st-bulb g" style="position:absolute;left:12vw;top:30px;" data-bulb-text="Millie Bobby Brown et ses cheveux : Elle ne voulait pas se raser la tête à 11 ans, mais une photo de Charlize Theron l’a convaincue. En saison 4, elle porte une perruque."></div>
+<div class="st-bulb b" style="position:absolute;left:22vw;top:18px;" data-bulb-text="Des personnages sauvés par les acteurs : Steve devait mourir en saison 1, mais le charisme de Joe Keery a changé le plan. Même chose pour Bob en saison 2."></div>
+<div class="st-bulb y" style="position:absolute;left:32vw;top:10px;" data-bulb-text="Un couple né sur le tournage : Natalia Dyer (Nancy) et Charlie Heaton (Jonathan) sont ensemble depuis 2016."></div>
+<div class="st-bulb p" style="position:absolute;left:42vw;top:50px;" data-bulb-text="Vecna maquillé, pas en CGI : Contrairement aux autres monstres, Vecna est créé avec maquillage et prothèses. Cela prenait jusqu’à 9h par jour."></div>
+<div class="st-bulb r" style="position:absolute;left:52vw;top:60px;" data-bulb-text="Succès de Running Up That Hill : La chanson de Kate Bush a explosé en popularité après la saison 4, atteignant le sommet des classements."></div>
+<div class="st-bulb g" style="position:absolute;left:62vw;top:55px;" data-bulb-text="Coût énorme : Chaque épisode de la saison 4 a coûté 30 millions $, un record."></div>
+<div class="st-bulb b" style="position:absolute;left:72vw;top:55px;" data-bulb-text="Dacre Montgomery fan avant d’être Billy : Il a envoyé une vidéo originale aux Duffer pour décrocher son rôle."></div>
+<div class="st-bulb y" style="position:absolute;left:82vw;top:45px;" data-bulb-text="Coiffures 100 % années 80 : Chaque personnage de la saison 4 a une coiffure inspirée d’une icône des années 80 (Ozzy Osbourne, Tom Cruise...)."></div>
+<div class="st-bulb p" style="position:absolute;left:92vw;top:30px;" data-bulb-text="Retour de Billy filmé à distance : Dacre a tourné ses scènes depuis l’Australie, montées ensuite avec celles de Sadie Sink filmées à Los Angeles."></div>
+        </div>
+    </div>
+<div id="st-funfact-info" style="position:fixed;right:30px;top:10px;z-index:4;background:rgba(0,0,0,0.85);color:#fff;border:2px solid #ff003c;padding:10px 22px;border-radius:12px;font-family:'Jersey 15',sans-serif;font-size:1.08em;box-shadow:0 0 12px #ff003c;max-width:340px;text-align:left;">
+    <i class="fa-regular fa-lightbulb" style="color:#ffe22a;margin-right:8px;"></i>
+    Si tu passes ta souris sur les ampoules, des fun facts apparaîtront !
+</div>
+<div id="st-funfact-info" style="position:fixed;right:1100px;top:10px;z-index:4;background:rgba(0,0,0,0.85);color:#fff;border:2px solid #ff003c;padding:10px 22px;border-radius:12px;font-family:'Jersey 15',sans-serif;font-size:1.08em;box-shadow:0 0 12px #ff003c;max-width:340px;text-align:left;">
+    <i class="fa-regular fa-lightbulb" style="color:#ffe22a;margin-right:8px;"></i>
+    Click n'importe ou pour entendre une musique culte de la série ! Une musique par page.
+</div>
+    <!-- Logo -->
+    <div id="st-logo" style="position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:2;pointer-events:none;">
+        <img src="https://upload.wikimedia.org/wikipedia/fr/6/67/StrangerThingslogo.png?20200422172612" alt="Stranger Things Logo" style="height:70px;width:auto;filter:drop-shadow(0 2px 8px #000);">
+    </div>
+
+    <!-- Alerte Spoiler -->
+    <div id="st-spoiler-alert" style="position:fixed;top:300px;left:18px;z-index:200;display:flex;align-items:center;gap:10px;">
+        <i class="fa-solid fa-triangle-exclamation fa-beat" style="color: #FFD43B; font-size: 2.1em;"></i>
+        <span style="color:#FFD43B;font-family:'Jersey 15',sans-serif;font-size:1.4em;text-shadow:0 0 8px #000;">Alerte Spoiler&nbsp;!!</span>
+    </div>
+    
+    <!-- Bouton flottant pour voir la saison suivante -->
+    <a id="st-btn-float-next" class="st-btn-next" href="#saison2">Voir le personnage suivant</a>
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <div class="st-encadrement" id="saison1">
+            <p class="jersey-15-regular">Bienvenue dans l'univers de Stranger Things</p>
+            <div style="margin: 25px 0; text-align: center; display: flex; justify-content: center; gap: 32px;">
+                <a href="site stranger thing.html" class="jersey-15-regular st-saison-link-red" style="padding:18px 32px;font-size:1.3em;border-radius:10px;background:#ff2222;color:#fff;text-shadow:0 0 8px #fff,0 0 16px #ff2222;box-shadow:0 0 12px #ff2222,0 0 24px #ff2222;transition:background 0.2s;">Saisons</a>
+                <a href="perso stranger thing.html" class="jersey-15-regular st-saison-link-red menu-categorie-active" style="padding:18px 32px;font-size:1.3em;border-radius:10px;background:#ff2222;color:#fff;text-shadow:0 0 8px #fff,0 0 16px #ff2222;box-shadow:0 0 12px #ff2222,0 0 24px #ff2222;transition:background 0.2s;">Personnages</a>
+                <a href="monstre stranger thing 24.html" class="jersey-15-regular st-saison-link-red" style="padding:18px 32px;font-size:1.3em;border-radius:10px;background:#ff2222;color:#fff;text-shadow:0 0 8px #fff,0 0 16px #ff2222;box-shadow:0 0 12px #ff2222,0 0 24px #ff2222;transition:background 0.2s;">Monstres</a>
+            </div>
+        </div>
+        <div class="st-encadrement" id="saison2">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://images.rtl.fr/~c/1540v1026/rtl/www/1208118-comment-eleven-va-t-elle-faire-son-retour-dans-stranger-things.png" alt="Eleven" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Eleven (Onze)</h1>
+                    <p class="jersey-15-regular">Jeune fille aux pouvoirs psychiques, élevée dans un laboratoire secret. Elle s'échappe et devient l'amie du groupe d'enfants. Courageuse, elle affronte les créatures de l'Upside Down et cherche sa place dans le monde.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="saison3">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/2800/Mike-Wheeler.Stranger-Things.webp" alt="Mike Wheeler" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Mike Wheeler</h1>
+                    <p class="jersey-15-regular">Leader du groupe d'amis, loyal et intelligent. Il aide Eleven à s'intégrer et reste toujours présent pour ses proches, notamment Will. Il vit une histoire d'amour avec Eleven.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="saison4">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/2800/Will-Byers.Stranger-Things.webp" alt="Will Byers" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Will Byers</h1>
+                    <p class="jersey-15-regular">Garçon sensible, il est la première victime de l'Upside Down. Son enlèvement déclenche l'intrigue de la série. Il reste marqué par ses expériences dans le monde parallèle.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="saison5">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://media.vanityfair.com/photos/594c0a35abcbd63dc43099be/master/w_1920,c_limit/Winona-Stranger-Things.jpg" alt="Joyce Byers" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Joyce Byers</h1>
+                    <p class="jersey-15-regular">Mère déterminée de Will et Jonathan. Prête à tout pour protéger ses enfants, elle est la première à croire à l'existence de l'Upside Down et à se battre contre les menaces surnaturelles.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="saison6">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://images.radio-canada.ca/q_auto,w_1250/v1/ici-info/16x9/netflix-stranger-things-hopper.jpg" alt="Jim Hopper" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Jim Hopper</h1>
+                    <p class="jersey-15-regular">Shérif de Hawkins, d'abord désabusé, il devient un père de substitution pour Eleven. Il protège la ville contre les dangers de l'Upside Down et se sacrifie pour sauver les autres.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="dustin">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-04/stranger_things_dustin.jpg" alt="Dustin Henderson" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Dustin Henderson</h1>
+                    <p class="jersey-15-regular">Génie de la bande, drôle et inventif. Il apporte des solutions techniques et garde toujours le moral, même dans les situations les plus dangereuses.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="lucas">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://seriesboutique.com/wp-content/uploads/2023/02/blogs_posts-saison_1_lucas_sincliar_5a3b8db4-eaa2-4b4d-a28f-d594daba2b1c_1024x1024.jpg" alt="Lucas Sinclair" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Lucas Sinclair</h1>
+                    <p class="jersey-15-regular">Ami fidèle, courageux et pragmatique. Il doute parfois d'Eleven au début, mais devient un membre indispensable du groupe.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="max">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://imgr.cineserie.com/2023/01/sadie-sink-stranger-things-netflix.png?width=660&height=370&aspect_ratio=660:370" alt="Max Mayfield" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Max Mayfield</h1>
+                    <p class="jersey-15-regular">Nouvelle venue dans la bande, forte et indépendante. Elle s'impose rapidement comme une alliée précieuse et développe une relation avec Lucas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="jonathan">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://www.strangerthings.fr/images/characters//a64c410e36d43f76a38ba94e8f2d78f4.jpg" alt="Jonathan Byers" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Jonathan Byers</h1>
+                    <p class="jersey-15-regular">Grand frère de Will, passionné de photographie. Il soutient sa famille et se rapproche de Nancy au fil des saisons.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="nancy">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*H0er7fOPkcX-eiKq" alt="Nancy Wheeler" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Nancy Wheeler</h1>
+                    <p class="jersey-15-regular">Sœur de Mike, intelligente et déterminée. Elle enquête sur les mystères de Hawkins et s'affirme comme une journaliste courageuse.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="steve">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://www.fulguropop.com/wp-content/uploads/2019/09/stranger-things-steve-junkyard.png" alt="Steve Harrington" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Steve Harrington</h1>
+                    <p class="jersey-15-regular">D'abord lycéen populaire, il devient un protecteur du groupe. Son évolution en « baby-sitter » héroïque en fait un personnage très apprécié.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="billy">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://fr.web.img6.acsta.net/r_654_368/newsv7/17/11/07/17/59/1720477.jpg" alt="Billy Hargrove" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Billy Hargrove</h1>
+                    <p class="jersey-15-regular">Demi-frère de Max, rebelle et tourmenté. Il devient l'un des antagonistes sous l'influence du Mind Flayer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="robin">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://www.gayvox.fr/wp-content/uploads/2022/07/1657006310_Stranger-Things-Robin-Buckley-est-le-heros-que-Hawkins-1024x509.jpeg" alt="Robin Buckley" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Robin Buckley</h1>
+                    <p class="jersey-15-regular">Collègue de Steve, brillante et pleine d'humour. Elle aide le groupe à décrypter les messages russes et devient une amie proche de Steve.</p>
+                </div>
+            </div>
+        </div>
+        <div class="st-encadrement" id="erica">
+            <div style="display:flex;align-items:center;gap:24px;justify-content:center;">
+                <img src="https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/2800/Erica-Sinclair.Stranger-Things.webp" alt="Erica Sinclair" style="height:110px;border-radius:12px;box-shadow:0 0 16px #ff0033;">
+                <div>
+                    <h1 class="jersey-15-regular">Erica Sinclair</h1>
+                    <p class="jersey-15-regular">Petite sœur de Lucas, maligne et pleine de répartie. Elle joue un rôle clé dans les aventures du groupe à partir de la saison 3.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script animation fog -->
+    <script>
+    const canvas = document.getElementById('st-bg-canvas');
+    const ctx = canvas.getContext('2d');
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    const fogs = Array.from({length: 32}, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: 80 + Math.random() * 120,
+        dx: (Math.random() - 0.5) * 0.18,
+        dy: (Math.random() - 0.5) * 0.18,
+        alpha: 0.10 + Math.random() * 0.10
+    }));
+    function draw() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for (const f of fogs) {
+            ctx.beginPath();
+            ctx.arc(f.x, f.y, f.r, 0, 2*Math.PI);
+            ctx.fillStyle = `rgba(255,0,40,${f.alpha})`;
+            ctx.shadowColor = '#ff0033';
+            ctx.shadowBlur = 40;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+            f.x += f.dx;
+            f.y += f.dy;
+            if (f.x < -f.r) f.x = canvas.width + f.r;
+            if (f.x > canvas.width + f.r) f.x = -f.r;
+            if (f.y < -f.r) f.y = canvas.height + f.r;
+            if (f.y > canvas.height + f.r) f.y = -f.r;
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+    </script>
+
+    <script>
+    // Gestion dynamique du bouton flottant pour pointer vers la saison suivante visible
+    const sections = ["saison2", "saison3", "saison4", "saison5", "saison6", "dustin", "lucas", "max", "jonathan", "nancy", "steve", "billy", "robin",];
+    const btnFloat = document.getElementById('st-btn-float-next');
+    function updateBtnFloat() {
+        let next = null;
+        for (let i = 0; i < sections.length; i++) {
+            const el = document.getElementById(sections[i]);
+            if (el) {
+                const rect = el.getBoundingClientRect();
+                if (rect.top > 60) { // 60px sous le haut de l'écran
+                    next = sections[i];
+                    break;
+                }
+            }
+        }
+        if (next) {
+            btnFloat.href = `#${next}`;
+            btnFloat.style.display = '';
+        } else {
+            btnFloat.style.display = 'none';
+        }
+    }
+    window.addEventListener('scroll', updateBtnFloat);
+    window.addEventListener('resize', updateBtnFloat);
+    document.addEventListener('DOMContentLoaded', updateBtnFloat);
+    updateBtnFloat();
+    </script>
+    <audio id="musiqueFond" src="Kate Bush - Running Up That Hill (Lyrics).mp3" autoplay loop></audio>
+    <script>
+window.addEventListener('click', function playMusicOnce() {
+    const audio = document.getElementById('musiqueFond');
+    if (audio) audio.play();
+    window.removeEventListener('click', playMusicOnce);
+});
+</script>
+<div style="position:fixed;right:1225px;top:575px;z-index:4;background:rgba(0,0,0,0.85);color:#fff;border:2px solid #ff003c;padding:10px 22px;border-radius:12px;font-family:'Jersey 15',sans-serif;font-size:1.08em;box-shadow:0 0 12px #ff003c;max-width:1000px;text-align:left;">
+    Running Up That Hill-Kate Bush
+</div>
+<div id="st-audio-controls" style="position:fixed;bottom:24px;left:24px;z-index:100;display:flex;align-items:center;gap:16px;background:rgba(0,0,0,0.85);border:2px solid #ff003c;padding:10px 18px 10px 14px;border-radius:12px;box-shadow:0 0 12px #ff003c;">
+    <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+    <button id="pauseBtn" style="padding:6px 18px;font-size:1.1em;border-radius:8px;background:#111;color:#fff;border:2px solid #ff003c;box-shadow:0 0 8px #ff003c88;cursor:pointer;">⏸ Pause</button>
+</div>
+<script>
+const audio = document.getElementById('musiqueFond');
+const volumeBar = document.getElementById('volumeBar');
+const pauseBtn = document.getElementById('pauseBtn');
+if (audio && volumeBar) {
+    volumeBar.addEventListener('input', function() {
+        audio.volume = this.value;
+    });
+    audio.addEventListener('volumechange', function() {
+        volumeBar.value = audio.volume;
+    });
+}
+if (audio && pauseBtn) {
+    pauseBtn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            pauseBtn.textContent = '⏸ Pause';
+        } else {
+            audio.pause();
+            pauseBtn.textContent = '▶️ Lecture';
+        }
+    });
+}
+</script>
+    <footer style="margin-top:48px;padding:32px 0;text-align:center;background:#1a1a1a;color:#fff;font-family:'Jersey 15',sans-serif;font-size:1.1em;letter-spacing:1px;">
+        <div>Tout droit réservé à Stranger Things</div>
+        <div style="font-size:0.95em;margin-top:6px;opacity:0.8;">Créateur de ce site : Flarox</div>
+    </footer>
+</body>
+</html>

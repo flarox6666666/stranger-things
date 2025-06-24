@@ -1,0 +1,189 @@
+body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background: linear-gradient(135deg, #441414 60%, #030303 100%);
+            font-family: "Jersey 15", sans-serif;
+            background-attachment: fixed;
+        }
+            #st-bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            display: block;
+        }
+        #st-lights {
+            position: static;
+            top: auto;
+            left: auto;
+            width: 100vw;
+            height: 80px;
+            z-index: 1;
+            pointer-events: none;
+            margin-bottom: 20px;
+        }
+        .st-bulb {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            box-shadow: 0 0 24px 8px #fff8;
+            opacity: 0.85;
+            animation: st-bulb-flicker 2.2s infinite alternate;
+        }
+        .st-bulb.r { background: #ff2a2a; animation-delay: 0.1s; }
+        .st-bulb.g { background: #6aff2a; animation-delay: 0.4s; }
+        .st-bulb.b { background: #2a7aff; animation-delay: 0.7s; }
+        .st-bulb.y { background: #ffe22a; animation-delay: 1.1s; }
+        .st-bulb.p { background: #c32aff; animation-delay: 1.5s; }
+        @keyframes st-bulb-flicker {
+            0% { filter: brightness(0.7); }
+            20% { filter: brightness(1.2); }
+            40% { filter: brightness(0.9); }
+            60% { filter: brightness(1.3); }
+            80% { filter: brightness(0.8); }
+            100% { filter: brightness(1.1); }
+        }
+        .jersey-15-regular {
+  font-family: "Jersey 15", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+p{
+    color: #ff2a2a;
+    text-align: center;
+    font-size: 1.5em;
+}
+ .st-encadrement {
+        background: rgba(0,0,0,0.85);
+        border: 3px solid #ff0033;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.7);
+        padding: 32px 40px;
+        margin: 0 auto 0 auto;
+        max-width: 600px;
+        text-align: center;
+        color: #fff;
+        font-size: 1.4rem;
+        opacity: 0.95;
+        transition: box-shadow 0.3s, border-color 0.3s, color 0.3s, text-shadow 0.3s;
+    }
+.st-encadrement:first-of-type {
+    margin-top: 28px !important; /* Encore plus rapproché du logo */
+}
+.st-encadrement:not(:first-of-type) {
+    margin-top: 32px !important;
+}
+.st-encadrement:hover {
+    border-color: #ff0000;
+    box-shadow: 0 0 24px 6px #ff0000, 0 0 60px 12px #ff0033;
+    color: #ff0000;
+    text-shadow: 0 0 8px #ff0000, 0 0 16px #ff0033, 0 0 2px #fff;
+}
+.st-encadrement:hover h1,
+.st-encadrement:hover p,
+.st-encadrement:hover .jersey-15-regular {
+    color: #ff0000;
+    text-shadow: 0 0 8px #ff0000, 0 0 16px #ff0033, 0 0 2px #fff;
+}
+h1{
+    color: #ff2a2a;
+    text-align: center;
+    font-size: 2.5em;
+}
+.main-content {
+    padding-top: 180px; /* Espace suffisant sous le logo + guirlande */
+}
+.st-saison-link-red {
+    color: #ff2222;
+    text-decoration: none;
+    font-family: 'Jersey 15', 'Creepster', cursive, sans-serif;
+    font-size: 1.3em;
+    margin: 0 12px;
+    transition: text-shadow 0.2s, color 0.2s;
+    text-shadow: 0 0 8px #ff2222, 0 0 16px #ff2222;
+}
+.st-saison-link-red:hover {
+    color: #fff;
+    text-shadow: 0 0 16px #ff2222, 0 0 32px #ff2222;
+}
+.st-btn-next {
+    display: inline-block;
+    margin: 28px auto 0 auto;
+    padding: 12px 32px;
+    background: #ff2222;
+    color: #fff;
+    font-family: 'Jersey 15', 'Creepster', cursive, sans-serif;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 12px #ff2222, 0 0 24px #ff2222;
+    text-shadow: 0 0 8px #fff, 0 0 16px #ff2222;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+.st-btn-next:hover {
+    background: #fff;
+    color: #ff2222;
+    box-shadow: 0 0 24px #ff2222, 0 0 48px #ff2222;
+    text-shadow: 0 0 16px #ff2222;
+}
+#st-btn-float-next {
+    position: fixed;
+    bottom: 38px;
+    right: 38px;
+    z-index: 100;
+    opacity: 0.95;
+    box-shadow: 0 0 24px #ff2222, 0 0 48px #ff2222;
+}
+#st-spoiler-alert {
+    position: fixed;
+    top: 50%;
+    left: 32px;
+    transform: translateY(50%);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+#st-spoiler-alert i {
+    font-size: 3.2em !important;
+}
+#st-spoiler-alert span {
+    font-size: 2.1em !important;
+    color: #FFD43B;
+    font-family: 'Jersey 15', sans-serif;
+    text-shadow: 0 0 8px #000, 0 0 16px #FFD43B;
+}
+.st-bulb[data-bulb-text]:hover::after {
+    content: attr(data-bulb-text);
+    position: absolute;
+    left: 50%;
+    top: -38px;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 0.95em;
+    background: rgba(0,0,0,0.92);
+    border: 2px solid #ff003c;
+    box-shadow: 0 0 8px #ff003c, 0 0 14px #ff003c88;
+    border-radius: 8px;
+    padding: 7px 16px;
+    display: block;
+    margin-top: 0;
+    opacity: 0.97;
+    text-align: left;
+    font-family: 'Jersey 15', sans-serif;
+    white-space: normal;
+    z-index: 10000;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    max-width: 320px;
+    min-width: 120px;
+    word-break: break-word;
+    line-height: 1.35;
+}
